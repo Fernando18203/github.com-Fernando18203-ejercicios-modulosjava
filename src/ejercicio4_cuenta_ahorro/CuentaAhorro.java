@@ -35,4 +35,20 @@ public class CuentaAhorro {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
+    // Método para depositar
+    public void depositar(double cantidad) {
+        if (cantidad > 0) {
+            saldo += cantidad;
+        }
+    }
+
+    // Método para retirar
+    public boolean retirar(double cantidad) {
+        if (cantidad > 0 && cantidad <= saldo) {
+            saldo -= cantidad;
+            return true;
+        }
+        return false;
+    }
 }
